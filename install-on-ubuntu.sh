@@ -15,7 +15,7 @@ deluge-console rm \$torrentid
 
 # Go to torrent path
 cd \$torrentpath
-
+echo okay >> debug.txt
 # make tarbal.gz package
 tar -czvf .\$torrentnameunderline.tar.gz "\$torrentname"
 rm -r "\$torrentname"
