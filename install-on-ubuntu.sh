@@ -1,9 +1,9 @@
+#!/bin/bash
 apt-get install deluge deluged deluge-console -y
 killall deluged
 deluge-console plugin -e Execute
 
 cat > ~/.config/deluge/tartorrent.sh <<EOL
-#!/bin/bash
 torrentid=\$1
 torrentname=\$2
 torrentnameunderline=\`echo \$2 | tr ' ' '_'\`
@@ -13,13 +13,13 @@ torrentpath=\$3
 deluge-console recheck \$torrentid
 
 # Go to torrent path
-cd \$3
+cd \$torrentpath
 
 # make tarbal.gz package
 tar -czvf .\$torrentnameunderline.tar.gz "\$torrentname"
 
 # remove torrent with data
-deluge-console rm --remove_data \$torrentid
+#deluge-console rm --remove_data \$torrentid
 
 # Rename to original name
 mv .\$torrentnameunderline.tar.gz "\$torrentname.tar.gz"
@@ -35,7 +35,7 @@ cat > ~/.config/deluge/execute.conf <<EOL
   "commands": [
     [
       "1", 
-      "complete", 
+      "removed", 
       "~/.config/deluge/tartorrent.sh"
     ]
   ]
