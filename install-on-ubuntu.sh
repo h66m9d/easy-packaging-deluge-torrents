@@ -9,20 +9,21 @@ torrentname=\$2
 torrentnameunderline=\`echo \$2 | tr ' ' '_'\`
 torrentpath=\$3
 
-# recheck
-deluge-console recheck \$torrentid
+# recheck and remove
+deluge-console recheck \$torrentid && deluge-console rm \$torrentid
 
+if [ -d "\$torrentname" ]; then
 # Go to torrent path
 cd \$torrentpath
 
 # make tarbal.gz package
 tar -czvf .\$torrentnameunderline.tar.gz "\$torrentname"
-
-# remove torrent with data
-#deluge-console rm --remove_data \$torrentid
+rm -r "\$torrentname"
 
 # Rename to original name
 mv .\$torrentnameunderline.tar.gz "\$torrentname.tar.gz"
+fi
+
 EOL
 
 chmod 755 ~/.config/deluge/tartorrent.sh
@@ -35,7 +36,7 @@ cat > ~/.config/deluge/execute.conf <<EOL
   "commands": [
     [
       "1", 
-      "removed", 
+      "complete", 
       "~/.config/deluge/tartorrent.sh"
     ]
   ]
