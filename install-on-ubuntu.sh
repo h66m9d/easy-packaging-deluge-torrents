@@ -1,6 +1,6 @@
 apt-get install deluge deluged deluge-console
 deluged
-deluge-console plugin -e Extractor
+deluge-console plugin -e Execute
 
 cat > ~/tartorrent.sh <<EOL
 #!/bin/bash
