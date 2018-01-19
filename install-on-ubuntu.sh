@@ -1,7 +1,7 @@
 #!/bin/bash
 #apt-get install deluge deluged deluge-console -y
-killall deluged
 deluge-console plugin -e Execute
+killall deluged
 
 cat > ~/.config/deluge/tartorrent.sh <<EOL
 torrentid=\$1
