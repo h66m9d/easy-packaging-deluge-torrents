@@ -30,15 +30,15 @@ chmod 755 ~/tartorrent.sh
 
 cat > ~/.config/deluge/execute.conf <<EOL
 {
-  "file": 1, 
+  "file": 1,
   "format": 1
 }{
   "commands": [
-    [
-      "ba55e2e3f8286ccbdd424750e119d6e99b129f32", 
-      "complete", 
-      "~/tartorrent.sh"
-    ]
+   [
+     "1",
+     "complete",
+     "~/tartorrent.sh"
+   ]
   ]
 }
 EOL
