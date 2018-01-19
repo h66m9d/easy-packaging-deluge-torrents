@@ -6,7 +6,7 @@ deluge-console plugin -e Execute
 cat > ~/.config/deluge/tartorrent.sh <<EOL
 torrentid=\$1
 torrentname=\$2
-torrentnameunderline=\`echo \$2 | tr ' ' '_'\`
+torrentnameunderline=\`echo \$torrentname | tr ' ' '_'\`
 torrentpath=\$3
 
 # recheck and remove
