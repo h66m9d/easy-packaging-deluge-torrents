@@ -13,17 +13,16 @@ torrentpath=\$3
 deluge-console recheck \$torrentid
 deluge-console rm \$torrentid
 
-if [ -d "\$torrentname" ]; then
 # Go to torrent path
 cd \$torrentpath
 
 # make tarbal.gz package
 tar -czvf .\$torrentnameunderline.tar.gz "\$torrentname"
 rm -r "\$torrentname"
+rm "\$torrentname"
 
 # Rename to original name
 mv .\$torrentnameunderline.tar.gz "\$torrentname.tar.gz"
-fi
 
 EOL
 
