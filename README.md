@@ -1,1 +1,1 @@
-# easy-packaging-deluge-torrents
+# Easy packaging deluge torrents
