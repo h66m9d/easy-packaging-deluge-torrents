@@ -1,3 +1,8 @@
+apt-get install deluge deluged deluge-console
+deluged
+deluge-console plugin -e Extractor
+
+cat > ~/tartorrent.sh <<EOL
 #!/bin/bash
 torrentid=$1
 torrentname=$2
@@ -19,3 +24,22 @@ deluge-console rm --remove_data $torrentid
 # Rename to original name
 # make tarbal.gz package
 #mv $torrentnameunderline.tar.gz "$torrentname.tar.gz"
+EOL
+
+chmod 755 ~/tartorrent.sh
+
+cat > ~/.config/deluge/execute.conf <<EOL
+{
+  "file": 1, 
+  "format": 1
+}{
+  "commands": [
+    [
+      "ba55e2e3f8286ccbdd424750e119d6e99b129f32", 
+      "complete", 
+      "~/tartorrent.sh"
+    ]
+  ]
+}
+EOL
+
