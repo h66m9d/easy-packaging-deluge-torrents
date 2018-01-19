@@ -1,5 +1,4 @@
-#!/bin/bash
-#apt-get install deluge deluged deluge-console -y
+apt-get install deluge deluged deluge-console -y
 deluge-console plugin -e Execute
 killall deluged
 
