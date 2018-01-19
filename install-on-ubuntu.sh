@@ -16,14 +16,13 @@ deluge-console recheck \$torrentid
 cd \$3
 
 # make tarbal.gz package
-tar -czvf \$torrentnameunderline.tar.gz "\$torrentname"
+tar -czvf .\$torrentnameunderline.tar.gz "\$torrentname"
 
 # remove torrent with data
 deluge-console rm --remove_data \$torrentid
 
 # Rename to original name
-# make tarbal.gz package
-#mv $torrentnameunderline.tar.gz "\$torrentname.tar.gz"
+mv .\$torrentnameunderline.tar.gz "\$torrentname.tar.gz"
 EOL
 
 chmod 755 ~/.config/deluge/tartorrent.sh
