@@ -10,7 +10,8 @@ torrentnameunderline=\`echo \$2 | tr ' ' '_'\`
 torrentpath=\$3
 
 # recheck and remove
-deluge-console recheck \$torrentid && deluge-console rm \$torrentid
+deluge-console recheck \$torrentid
+deluge-console rm \$torrentid
 
 if [ -d "\$torrentname" ]; then
 # Go to torrent path
