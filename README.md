@@ -1,5 +1,5 @@
 # Easy packaging deluge torrents
-## install on Ubuntut:
+## Install on Ubuntut:
 
  `wget "https://github.com/h66m9d/easy-packaging-deluge-torrents/raw/master/install-on-ubuntu.sh"`
  
