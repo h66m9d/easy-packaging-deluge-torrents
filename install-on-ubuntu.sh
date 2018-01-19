@@ -4,6 +4,7 @@ deluge-console plugin -e Execute
 killall deluged
 
 cat > ~/.config/deluge/tartorrent.sh <<EOL
+#!/bin/bash
 torrentid=\$1
 torrentname=\$2
 torrentnameunderline=\`echo \$torrentname | tr ' ' '_'\`
