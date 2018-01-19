@@ -35,7 +35,7 @@ cat > ~/.config/deluge/execute.conf <<EOL
 }{
   "commands": [
     [
-      "0b58468a56042412948ec61c1697a6da9551aadd", 
+      "1", 
       "complete", 
       "~/.config/deluge/tartorrent.sh"
     ]
