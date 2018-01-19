@@ -10,6 +10,7 @@ torrentnameunderline=\`echo \$torrentname | tr ' ' '_'\`
 torrentpath=\$3
 
 # recheck and remove
+echo \$(date +"%Y-%m-%d %H:%M:%S") -- \[\$torrentname\] recheck started. >> \$torrentpath/debug.txt
 deluge-console recheck \$torrentid && echo \$(date +"%Y-%m-%d %H:%M:%S") -- \[\$torrentname\] recheck completed. >> \$torrentpath/debug.txt
 deluge-console rm \$torrentid && echo \$(date +"%Y-%m-%d %H:%M:%S") -- \[\$torrentname\] removed from deluge. >> \$torrentpath/debug.txt
 
